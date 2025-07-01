@@ -1,5 +1,5 @@
-/** @type {import("tailwindcss").Config} */
-export default {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,7 +7,19 @@ export default {
   safelist: [
     'translate-x-0',
     '-translate-x-full',
-    'lg:translate-x-0'
+    'opacity-0',
+    'opacity-100',
+    'hidden',
+    'block',
+    'flex',
+    'lg:translate-x-0',
+    'lg:-translate-x-full',
+    'sm:translate-x-0',
+    'sm:-translate-x-full',
+    'md:translate-x-0',
+    'md:-translate-x-full',
+    'xl:translate-x-0',
+    'xl:-translate-x-full'
   ],
   theme: {
     extend: {
@@ -68,4 +80,4 @@ export default {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

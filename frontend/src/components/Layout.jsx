@@ -1,3 +1,5 @@
+
+import clsx from "clsx";
 import { useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { 
@@ -39,10 +41,11 @@ const Layout = () => {
       )}
 
       {/* Sidebar */}
-      <div className={`
-        fixed inset-y-0 left-0 z-50 w-64 bg-slate-900 transform transition-transform duration-300 ease-in-out
-        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0
-      `}>
+      <div className={clsx(
+        "fixed inset-y-0 left-0 z-50 w-64 bg-slate-900 transform transition-transform duration-300 ease-in-out",
+        sidebarOpen ? "translate-x-0" : "-translate-x-full",
+        "lg:translate-x-0"
+      )}>
         <div className="flex items-center justify-between h-16 px-6 bg-slate-800">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
@@ -67,13 +70,12 @@ const Layout = () => {
               <Link
                 key={item.id}
                 to={item.path}
-                className={`
-                  flex items-center px-4 py-3 mb-2 rounded-lg transition-colors
-                  ${isActive(item.path) 
-                    ? 'bg-blue-600 text-white' 
-                    : 'text-slate-300 hover:bg-slate-800 hover:text-white'
-                  }
-                `}
+                className={clsx(
+                  "flex items-center px-4 py-3 mb-2 rounded-lg transition-colors",
+                  isActive(item.path)
+                    ? "bg-blue-600 text-white"
+                    : "text-slate-300 hover:bg-slate-800 hover:text-white"
+                )}
                 onClick={() => setSidebarOpen(false)}
               >
                 <Icon className="h-5 w-5 mr-3" />
@@ -126,4 +128,3 @@ const Layout = () => {
 };
 
 export default Layout;
-

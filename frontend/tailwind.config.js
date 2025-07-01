@@ -4,23 +4,6 @@ module.exports = {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  safelist: [
-    'translate-x-0',
-    '-translate-x-full',
-    'opacity-0',
-    'opacity-100',
-    'hidden',
-    'block',
-    'flex',
-    'lg:translate-x-0',
-    'lg:-translate-x-full',
-    'sm:translate-x-0',
-    'sm:-translate-x-full',
-    'md:translate-x-0',
-    'md:-translate-x-full',
-    'xl:translate-x-0',
-    'xl:-translate-x-full'
-  ],
   theme: {
     extend: {
       colors: {
@@ -79,5 +62,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-};
+  plugins: [
+    require("tailwindcss-animate"),
+  ],
+}
